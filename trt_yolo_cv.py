@@ -72,8 +72,8 @@ def main():
     args = parse_args()
     if args.category_num <= 0:
         raise SystemExit('ERROR: bad category_num (%d)!' % args.category_num)
-    if not os.path.isfile('yolo/%s.trt' % args.model):
-        raise SystemExit('ERROR: file (yolo/%s.trt) not found!' % args.model)
+    if not os.path.isfile(args.model):
+        raise SystemExit('ERROR: file %s.trt not found!' % args.model)
 
     cap = cv2.VideoCapture(args.video)
     if not cap.isOpened():
